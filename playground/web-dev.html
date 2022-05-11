@@ -1,0 +1,28 @@
+<!-- 웹 페이지는 html, css, javascript로 기본적으로 작성. -->
+<!-- ! 탭 하면 기본 html 구조 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 화면에 나와있는 DOM의 정보를 넣는 것 -->
+    <!-- div#app + 탭 -->
+    <div id="app"></div>
+
+    <script>
+        // < !--DOM을 조작하는 것-- >
+        var div = document.querySelector('#app');
+        var str = 'hello world'
+        div.innerHTML = str
+
+        str = 'hello world!!!'
+        div.innerHTML = str
+        // 마지막으로 입력된 갱신된 값을 표현, 마지막 한 줄.
+        // 일반적인 웹페이지
+    </script>
+</body>
+</html>
