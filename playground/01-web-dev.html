@@ -9,15 +9,16 @@
     <title>Document</title>
 </head>
 <body>
-    <!-- 화면에 나와있는 DOM의 정보를 넣는 것 -->
+    <!-- html은 화면에 나와있는 DOM의 정보를 넣는 것 -->
     <!-- div#app + 탭 -->
     <div id="app"></div>
 
     <script>
-        // < !--DOM을 조작하는 것-- >
+        // < !--div태크의 정보를 출력함. javascript, DOM을 조작하는 것-- >
         var div = document.querySelector('#app');
         var str = 'hello world'
         div.innerHTML = str
+        // 일반적으로 화면에 표시되는 부분은 변수로 연결시켜준다.
 
         str = 'hello world!!!'
         div.innerHTML = str

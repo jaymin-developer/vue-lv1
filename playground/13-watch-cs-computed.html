@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">{{ num }}</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: "#app",
+        data: {
+          num: 10,
+        },
+        // computed, 데이터에 의존성,
+        // 기준이 되는 값에 따라 계산된다. 벨리데이션용으로 가벼운 로직
+        // 대부분 케이스에 적합
+        computed: {
+          doubleNum: function () {
+            return this.num * 2;
+          },
+        },
+        // watch, 데이터를 대상으로 넣을 수 있고, 데이터의 변화에 따라서 특정 로직 실행.
+        // num 발생할 때 실행되는데, 무거운 로직들, 매번 실행되기 무서운 로직
+        // 데이터 요청시에
+        watch: {
+          num: function (newValue, oldValue) {
+            this.fetchUserByNumber(newValue);
+          },
+        },
+        methods: {
+          fetchUserByNumber: function (num) {
+            // console.log(num);
+            axios.get(num);
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
